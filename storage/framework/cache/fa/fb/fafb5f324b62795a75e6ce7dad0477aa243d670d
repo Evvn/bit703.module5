@@ -1,0 +1,58 @@
+1602928381a:1:{s:11:"account.htm";a:12:{s:8:"fileName";s:11:"account.htm";s:7:"content";s:979:"title = "Account"
+url = "/account/"
+layout = "default"
+description = "Sign in, registration and account management."
+is_hidden = 0
+ 
+paramCode = "code"
+forceSecure = 0
+==
+<div id="main">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                {% if user %}
+                <h2>Account Details</h2>
+                {% else %}
+                <h2>User Login/Registration</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            {% flash %}
+                <p><div class="alert alert-{{ type == 'error' ? 'danger' : 'success' }}">{{ message }}</div></p>
+            {% endflash %}
+        </div>
+        {% component 'account' %}
+        {% if not user %}
+        <div class="row">
+            <p><a href="{{ 'reset-password'|page }}">Forgotten your password?</a></p>
+        </div>
+        {% endif %}
+        
+    </div><!-- /.container -->
+</div>";s:5:"mtime";i:1602917461;s:6:"markup";s:799:"<div id="main">
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                {% if user %}
+                <h2>Account Details</h2>
+                {% else %}
+                <h2>User Login/Registration</h2>
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            {% flash %}
+                <p><div class="alert alert-{{ type == 'error' ? 'danger' : 'success' }}">{{ message }}</div></p>
+            {% endflash %}
+        </div>
+        {% component 'account' %}
+        {% if not user %}
+        <div class="row">
+            <p><a href="{{ 'reset-password'|page }}">Forgotten your password?</a></p>
+        </div>
+        {% endif %}
+        
+    </div><!-- /.container -->
+</div>";s:4:"code";N;s:5:"title";s:7:"Account";s:3:"url";s:9:"/account/";s:6:"layout";s:7:"default";s:11:"description";s:45:"Sign in, registration and account management.";s:9:"is_hidden";s:1:"0";s:9:"paramCode";s:4:"code";s:11:"forceSecure";s:1:"0";}}

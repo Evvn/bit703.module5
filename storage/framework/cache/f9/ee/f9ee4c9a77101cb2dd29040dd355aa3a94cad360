@@ -1,0 +1,25 @@
+1602928564a:1:{s:13:"add-image.htm";a:9:{s:8:"fileName";s:13:"add-image.htm";s:7:"content";s:299:"title = "Add an image"
+url = "/image/add"
+is_hidden = 0
+
+[AddImages]
+==
+<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <h2>Add an image</h2>
+      </div>
+    </div>
+    {% component 'AddImages' %}
+  </div> <!-- /.container -->
+</div>";s:5:"mtime";i:1602927962;s:6:"markup";s:227:"<div id="main">
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <h2>Add an image</h2>
+      </div>
+    </div>
+    {% component 'AddImages' %}
+  </div> <!-- /.container -->
+</div>";s:4:"code";N;s:5:"title";s:12:"Add an image";s:3:"url";s:10:"/image/add";s:9:"is_hidden";s:1:"0";s:9:"AddImages";a:0:{}}}

@@ -24,7 +24,9 @@
           <img src="{{ image.image.getPath() }}" class="{{ image.filter }}" alt="{{ image.description }}">
         </picture>
         <h5>{{ image.name }}</h5>
-        <p>trhhrth{{ image.description }}</p>
+        <!-- was this a typo in the course? -->
+        <!-- <p>trhhrth{{ image.description }}</p> -->
+        <p>{{ image.description }}</p>
         <p><a href="/image?delete_image={{ image.id }}" class="btn btn-primary btn-sm">Delete</a></p>
       </div>
     {% endfor %}

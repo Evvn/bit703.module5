@@ -1,8 +1,58 @@
-1602928381a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:110:"title = "Philter"
+1603018456a:1:{s:8:"home.htm";a:10:{s:8:"fileName";s:8:"home.htm";s:7:"content";s:795:"title = "Philter"
 url = "/"
 layout = "default"
 is_hidden = 0
 
 [RecentImages]
 ==
-{% component 'RecentImages' %}";s:5:"mtime";i:1602842388;s:6:"markup";s:30:"{% component 'RecentImages' %}";s:4:"code";N;s:5:"title";s:7:"Philter";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:12:"RecentImages";a:0:{}}}
+<div id="hero_wrapper">
+  <div id="hero">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Welcome To Philter</h1>
+        <p>Find something cool? Share it with our community.<br/> Look at other images as well</p>
+        {% if is_logged_in %}
+            <p><a class="btn btn-primary text-center" href="/image/add">Upload an Image Now</a></p>
+        {% else %}
+            <p><a class="btn btn-primary text-center" href="/user/login">Login Now</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    {{ message }}
+  </div>
+</div>
+
+<div id="other-images-home" class="container-fluid">
+  {% component 'RecentImages' %}
+</div>
+
+";s:5:"mtime";i:1602930147;s:6:"markup";s:713:"<div id="hero_wrapper">
+  <div id="hero">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Welcome To Philter</h1>
+        <p>Find something cool? Share it with our community.<br/> Look at other images as well</p>
+        {% if is_logged_in %}
+            <p><a class="btn btn-primary text-center" href="/image/add">Upload an Image Now</a></p>
+        {% else %}
+            <p><a class="btn btn-primary text-center" href="/user/login">Login Now</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    {{ message }}
+  </div>
+</div>
+
+<div id="other-images-home" class="container-fluid">
+  {% component 'RecentImages' %}
+</div>";s:4:"code";N;s:5:"title";s:7:"Philter";s:3:"url";s:1:"/";s:6:"layout";s:7:"default";s:9:"is_hidden";s:1:"0";s:12:"RecentImages";a:0:{}}}

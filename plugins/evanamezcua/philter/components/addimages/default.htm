@@ -4,7 +4,8 @@
   {% endflash %}
 </div>
 <div class="row">
-  <form action="{{ url('image/add') }}" accept-charset="UTF8" enctype="multipart/form-data"  id="image-form" class="col col-sm-8 col-md-6">
+  <!-- <form action="{{ url('image/add') }}" accept-charset="UTF8" enctype="multipart/form-data"  id="image-form" class="col col-sm-8 col-md-6" data-request="addImage" method="post"> -->
+  <form id="image-form" data-request="addImage" method="post" action="{{ url('image/add') }}" accept-charset="UTF8" class="col col-sm-8 col-md-8" enctype="multipart/form-data">
   
     {{ form_token() }}
     {{ form_sessionKey() }}

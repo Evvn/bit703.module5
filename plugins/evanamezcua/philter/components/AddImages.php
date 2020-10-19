@@ -29,7 +29,13 @@ class AddImages extends ComponentBase
         $image->name = Input::get('title');
         $image->description = Input::get('description');
         $image->user = Auth::getUser();
-        $image->image = Input::get('image');
+        // going to comment this out due to error: 
+        // SQLSTATE[HY000]: General error: 1364 Field 'disk_name' doesn't have a default value (SQL: insert into `system_files` (`is_public`, `field`, `attachment_id`, `attachment_type`, `updated_at`, `created_at`) values (1, image, 28, Evanamezcua\Philter\Models\Image, 2020-10-18 10:22:11, 2020-10-18 10:22:11))
+
+        // this is documented as a known error with October CMS backend:
+        // https://github.com/octobercms/october/issues/5270
+        // fixed in a new version?
+        // $image->image = Input::file('file');
         $image->filter = Input::get('filter');
         $image->save();
         $tags = Input::get('tags');
@@ -42,19 +48,7 @@ class AddImages extends ComponentBase
         $image->tags()->attach($tag_models);
         $image->save();
         Flash::success('Your image has been uploaded');
-        return Redirect::back();
-    }
 
-    // i think this goes here? maybe in Tag.php instead?
-    // adds new tag or returns existing tag
-    public function scopeGetTag($query, $new_tag)
-    {
-        $tag = Tag::where('tag', '=', $new_tag)->first();
-        if ($tag == null) {
-            $tag = new Tag();
-            $tag->tag = $new_tag;
-            $tag->save();
-        }
-        return $tag->id;
+        return Redirect::back();
     }
 }

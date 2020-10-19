@@ -50,9 +50,7 @@ class Image extends Model
     public $belongsTo = [
         'user' => ['RainLab\User\Models\User']
     ];
-    /*
-     * Relations
-     */
+    
     public $attachOne = [
         'image' => ['System\Models\File']
     ];

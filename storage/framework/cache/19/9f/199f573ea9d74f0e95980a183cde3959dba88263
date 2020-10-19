@@ -1,4 +1,4 @@
-1602920710a:1:{s:10:"footer.htm";a:5:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:195:"<div class="container-fluid">
+1603017378a:1:{s:10:"footer.htm";a:5:{s:8:"fileName";s:10:"footer.htm";s:7:"content";s:195:"<div class="container-fluid">
   <div class="row justify-content-between">
     <div class="col">
       <p>© {{ "now"|date("Y") }} Evan Amezcua. All rights reserved</p>

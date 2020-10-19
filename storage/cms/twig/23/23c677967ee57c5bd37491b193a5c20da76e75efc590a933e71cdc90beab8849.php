@@ -31,7 +31,7 @@ class __TwigTemplate_7c3d05fc8910a77541906e721e54935027b37cb7287a4020fc0bc82596f
         $this->sandbox = $this->env->getExtension('\Twig\Extension\SandboxExtension');
         $tags = array("flash" => 2);
         $filters = array("escape" => 3);
-        $functions = array("url" => 7, "form_token" => 9, "form_sessionKey" => 10);
+        $functions = array("url" => 7, "form_token" => 10, "form_sessionKey" => 11);
 
         try {
             $this->sandbox->checkSecurity(
@@ -76,17 +76,21 @@ class __TwigTemplate_7c3d05fc8910a77541906e721e54935027b37cb7287a4020fc0bc82596f
         $context["type"] = $_type;        $context["message"] = $_message;        // line 5
         echo "</div>
 <div class=\"row\">
-  <form action=\"";
+  <!-- <form action=\"";
         // line 7
         echo url("image/add");
-        echo "\" accept-charset=\"UTF8\" enctype=\"multipart/form-data\"  id=\"image-form\" class=\"col col-sm-8 col-md-6\">
+        echo "\" accept-charset=\"UTF8\" enctype=\"multipart/form-data\"  id=\"image-form\" class=\"col col-sm-8 col-md-6\" data-request=\"addImage\" method=\"post\"> -->
+  <form id=\"image-form\" data-request=\"addImage\" method=\"post\" action=\"";
+        // line 8
+        echo url("image/add");
+        echo "\" accept-charset=\"UTF8\" class=\"col col-sm-8 col-md-8\" enctype=\"multipart/form-data\">
   
     ";
-        // line 9
+        // line 10
         echo call_user_func_array($this->env->getFunction('form_token')->getCallable(), ["token"]);
         echo "
     ";
-        // line 10
+        // line 11
         echo call_user_func_array($this->env->getFunction('form_sessionKey')->getCallable(), ["sessionKey"]);
         echo "
 
@@ -157,7 +161,7 @@ class __TwigTemplate_7c3d05fc8910a77541906e721e54935027b37cb7287a4020fc0bc82596f
 
     public function getDebugInfo()
     {
-        return array (  90 => 10,  86 => 9,  81 => 7,  77 => 5,  68 => 3,  65 => 2,  62 => 1,);
+        return array (  94 => 11,  90 => 10,  85 => 8,  81 => 7,  77 => 5,  68 => 3,  65 => 2,  62 => 1,);
     }
 
     public function getSourceContext()
@@ -168,7 +172,8 @@ class __TwigTemplate_7c3d05fc8910a77541906e721e54935027b37cb7287a4020fc0bc82596f
   {% endflash %}
 </div>
 <div class=\"row\">
-  <form action=\"{{ url('image/add') }}\" accept-charset=\"UTF8\" enctype=\"multipart/form-data\"  id=\"image-form\" class=\"col col-sm-8 col-md-6\">
+  <!-- <form action=\"{{ url('image/add') }}\" accept-charset=\"UTF8\" enctype=\"multipart/form-data\"  id=\"image-form\" class=\"col col-sm-8 col-md-6\" data-request=\"addImage\" method=\"post\"> -->
+  <form id=\"image-form\" data-request=\"addImage\" method=\"post\" action=\"{{ url('image/add') }}\" accept-charset=\"UTF8\" class=\"col col-sm-8 col-md-8\" enctype=\"multipart/form-data\">
   
     {{ form_token() }}
     {{ form_sessionKey() }}

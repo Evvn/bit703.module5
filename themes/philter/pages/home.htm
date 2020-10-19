@@ -5,4 +5,29 @@ is_hidden = 0
 
 [RecentImages]
 ==
-{% component 'RecentImages' %}
+<div id="hero_wrapper">
+  <div id="hero">
+    <div class="container-fluid">
+      <div class="row">
+        <h1>Welcome To Philter</h1>
+        <p>Find something cool? Share it with our community.<br/> Look at other images as well</p>
+        {% if is_logged_in %}
+            <p><a class="btn btn-primary text-center" href="/image/add">Upload an Image Now</a></p>
+        {% else %}
+            <p><a class="btn btn-primary text-center" href="/user/login">Login Now</a></p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    {{ message }}
+  </div>
+</div>
+
+<div id="other-images-home" class="container-fluid">
+  {% component 'RecentImages' %}
+</div>
+

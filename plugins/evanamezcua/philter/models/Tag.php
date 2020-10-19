@@ -15,7 +15,6 @@ class Tag extends Model
      */
     public $timestamps = false;
 
-
     /**
      * @var string The database table used by the model.
      */
@@ -26,4 +25,16 @@ class Tag extends Model
      */
     public $rules = [
     ];
+
+    // adds new tag or returns existing tag
+    public function scopeGetTag($query, $new_tag)
+    {
+        $tag = Tag::where('tag', '=', $new_tag)->first();
+        if ($tag == null) {
+            $tag = new Tag();
+            $tag->tag = $new_tag;
+            $tag->save();
+        }
+        return $tag->id;
+    }
 }
